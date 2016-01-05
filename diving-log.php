@@ -41,7 +41,7 @@ class Diving_Log
 			'rewrite'               => array( 'slug' => 'life' ),
 		);
 
-		register_taxonomy( 'life', array( 'post', 'attachment' ), $args );
+		register_taxonomy( 'life', 'post', $args );
 
 		$args = array(
 			'hierarchical'          => false,
@@ -53,7 +53,7 @@ class Diving_Log
 			'rewrite'               => array( 'slug' => 'point' ),
 		);
 
-		register_taxonomy( 'point', array( 'post', 'attachment' ), $args );
+		register_taxonomy( 'point', 'post', $args );
 	}
 
 	function the_content( $content )
