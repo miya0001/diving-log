@@ -26,7 +26,8 @@ class Diving_Log
 		);
 
 		add_action( 'init', array( $this, 'init' ) );
-		add_filter( 'the_content', array( $this, 'the_content' ), 11 );
+		add_filter( 'the_content', array( $this, 'the_content' ), 11, 2 );
+		add_shortcode( 'get_diving_logs', array( $this, 'get_diving_logs' ) );
 	}
 
 	public function init()
@@ -81,6 +82,39 @@ class Diving_Log
 		}
 
 		return $content . $html;
+	}
+
+	public function get_diving_logs()
+	{
+		$posts = get_posts( array(
+			'post_status' => 'publish',
+			'post_type' => 'post',
+			'posts_per_page' => 5,
+			'offset'=> 0,
+			'tax_query' => array(
+				array(
+					'taxonomy' => 'point',
+					'field' => 'name',
+					'terms' => get_the_title()
+				)
+			)
+		) );
+
+		if ( $posts ) {
+			$html = '<h2>' . __( 'Related Posts', 'diving-log' ) . '</h2><ul>';
+
+			foreach ( $posts as $post ) {
+				$html .= sprintf(
+					'<li><a href="%s">%s</a></li>',
+					esc_url( get_permalink( $post->ID ) ),
+					esc_html( $post->post_title )
+				);
+			}
+
+			$html .= '</ul>';
+
+			return $html;
+		}
 	}
 
 	private function get_term_labels( $terms )

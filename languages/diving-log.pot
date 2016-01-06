@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Diving Log 0.1-alpha\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/diving-log\n"
-"POT-Creation-Date: 2016-01-05 11:02:23+00:00\n"
+"POT-Creation-Date: 2016-01-06 05:37:14+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -12,12 +12,16 @@ msgstr ""
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 
-#: diving-log.php:36 diving-log.php:69
+#: diving-log.php:37 diving-log.php:70
 msgid "Living Things"
 msgstr ""
 
-#: diving-log.php:48
+#: diving-log.php:49 diving-log.php:80
 msgid "Point Name"
+msgstr ""
+
+#: diving-log.php:103
+msgid "Related Posts"
 msgstr ""
 
 #. Plugin Name of the plugin/theme
